@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 before_filter :load_product
-before_filter :ensure_logged_in, only: [:create, :destroy]
+before_filter :ensure_logged_in, only: [:create, :destroy   ]
 
   def show
     @reservation = Reservation.find(params[:id])
