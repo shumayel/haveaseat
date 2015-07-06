@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
+  # get 'sessions/new'
+  # get 'sessions/create'
+  # get 'sessions/destroy'
   # get 'restaurants/index'
-
   # get 'restaurants/show'
-
   # get 'restaurants/new'
-
   # get 'restaurants/edit'
   # post 'restaurants/edit'
 
-  resources :restaurants
+resources :restaurants
+resources :users, only: [:new, :create]
+resources :sessions, only: [:new, :create, :destroy]
 
-  # The priority is based upon order of creation: first created -> highest priority.
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
