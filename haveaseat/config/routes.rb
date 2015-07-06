@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   # get 'sessions/new'
   # get 'sessions/create'
   # get 'sessions/destroy'
@@ -8,7 +10,9 @@ Rails.application.routes.draw do
   # get 'restaurants/edit'
   # post 'restaurants/edit'
 
-resources :restaurants
+resources :restaurants do
+  resources :reservations, only: [:show, :create, :destroy]
+end
 resources :users, only: [:new, :create]
 resources :sessions, only: [:new, :create, :destroy]
 

@@ -7,6 +7,10 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+if current_user
+    @reservation = @restaurant.reservations.build
+end
+
   def new
     @restaurant = Restaurant.new
   end
@@ -14,7 +18,5 @@ class RestaurantsController < ApplicationController
   def edit
     @restaurant = Restaurant.find(params[:ids])
   end
-
-
 
 end
