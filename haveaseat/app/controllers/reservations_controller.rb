@@ -11,7 +11,7 @@ before_filter :ensure_logged_in, only: [:create, :destroy   ]
     @reservation.user = current_user
 
     if @reservation.save
-        redirect_to reservations_path, notice: 'Review created successfully'
+        redirect_to restaurants_url, notice: 'Reservation successfully created'
     else
         render 'reservations/show'
     end
